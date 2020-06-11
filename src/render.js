@@ -97,20 +97,20 @@ function getAuthData() {
             password: password.value,
           };
           axios
-            .post("https://localhost5000/user/signup", user)
+            .post("http://localhost:5000/user/signup", user)
             .then((res) => 
             {
               if (res) 
               {
-                login.click();
+               // login.click();
                 console.log("posted");
-                console.log(res);
+                console.log(res.data);
                 signup.innerText = "Signedup";
-                // signup.innerText="Signedup2".;
-                const user = res.data.map((user) => 
-                {
-                return { title: user.title, completed: user.completed };
-                });
+                //signup.innerText="Signedup2".;
+                // const user = res.data.map((user) => 
+                // {
+                // return { title: user.title, completed: user.completed };
+                // });
 
 
               }
@@ -138,7 +138,8 @@ login.onclick=e=>{
      email: email.value,
      password: password.value
   }
-  axios.post("https://localhost5000/users/login",user).
+  console.log(user);
+  axios.post("http://localhost:5000/user/login",user).
   then(res=>{
     if(res)
 
@@ -147,12 +148,12 @@ login.onclick=e=>{
      * tokenm @token
      * userId @_id_at_backend
      */
-    console.log("posted");
-    console.log(typeof(res
-   ))
-     const token=res.token;
-     this.token = token;
-     
+    console.log((res))
+     const token=res.body.token;
+   
+
+     this.token = "ho";
+     console.log(this.token)  
      if(token)
      {
       
@@ -160,6 +161,7 @@ login.onclick=e=>{
        this.setAuthTimer(expiresInDuration);
        //tells whether the user is authenticatd then he /she will be able to modify the daata
        this.isAuthenticated = true;
+       console.log(isAuthenticated);
        this.userId = res.userId;
        const now = new Date();
        //because the expiration time is always releveant to the time of  new roload
@@ -172,7 +174,8 @@ login.onclick=e=>{
        this.saveAuthData(token, expirationDate, this.userId);
         
      }
-    const user =res.data.map(user=>{return( {email: user.email ,password :user.password})})
+     console.log(res)
+    //const user =res.data.map(user=>{return( {email: user.email ,password :user.password})})
   })
   .catch(err=>{
     console.log("from side of error ")

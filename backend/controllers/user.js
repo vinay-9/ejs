@@ -6,9 +6,12 @@ const User = require("../models/user");
 exports.createUser = (req, res, next) =>
  {
 // to create a hash password
-  bcrypt.hash(req.body.password, 10).then(hash => {
+ console.log("signin up in the route -backend")
+  bcrypt.hash(req.body.password, 10).then(hash => 
+    {
+    
     const user = new User({
-      email: req.body.email,
+      email: req.data.email,
       password: hash
     });
 
@@ -18,12 +21,12 @@ exports.createUser = (req, res, next) =>
       .then((result) => {
         res.status(201).json({
           message: "User created!",
-          result: result
+          result:   result
         });
       })
       .catch(err => {
         res.status(500).json({
-          message: "Invalid authentication credentials!"
+          message:"Invalid authentication credentials!"
         });
       });
   });
@@ -34,7 +37,7 @@ exports.userLogin = (req, res, next) =>
   let fetchedUser;
 
   //search in rhte backend forlde of mongodb
-  User.findOne({ email: req.body.email })
+  User.findOne({ email: req.data.email })
     .then(user => {
       if (!user) {
         return res.status(401).json({
@@ -42,7 +45,7 @@ exports.userLogin = (req, res, next) =>
         });
       }
       fetchedUser = user;
-      return bcrypt.compare(req.body.password, user.password);// return true oor false to the then function
+      return bcrypt.compare(req.data.password, user.password);// return true oor false to the then function
     })//dono me check karna hai ki kadhi hamara authentication kahi fail toh nahi hua hai
     .then(result => {
       if (!result) {
