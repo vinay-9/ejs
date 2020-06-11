@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css">
+     <!-- this script is associated with the html page 
+      index.js is asscociaed with creating the window only nothing else   -->
+    <script defer src="render.js" type ="text/javascript"></script>
+    <link rel="stylesheet" href ="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    
+    <h1>💖Record your Screen 📹</h1>
+    <div class="container" style ="border-radius: 5px; border-width: medium;" >
+      <div  style ="background-color: dimgray; align-content: center; text-align: justify; ">
+        <div style="padding: 20px;">
+          
+          <input  
+          value ="your_email@service_provider.com"
+          class ="form-group"
+          id="email"
+          name="email"
+          style="border-radius: 3px; border-width: 0cm;"
+          placeholder =" enter the email "
+          type="email"
+          required=true
+          >
+          
+ 
+        
+          <br>
+        <input  value ="heufcsd" class="form-group" style="border-radius: 3px; border-width: 0cm;" type ="password" id="password" placeholder="enter Password">
+         <br>
+        <button type="submit"class="btn btn-info are-small  is-paddingless" id ="signup"  >SignUp</button>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-success are-small  is-paddingless" id ="login" >Login</button>
+      </div>
+    </div>
+     
+    </div>
+    <video>
+
+    </video>
+    <button id="startBtn" class="btn btn-success">start</button>
+    <button id="stopBtn" class ="btn btn-danger"> Stop</button>
+    <hr/>
+    <button id ="videoSelectBtn" class ="btn btn-info">
+      choose a video  
+    </button>
+  </body>
+</html>
