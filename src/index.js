@@ -47,6 +47,7 @@
 // // code. You can also put them in separate files and import them here.
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+const express =require('express');
 
 const server =require('../backend/app');
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -63,8 +64,9 @@ const createWindow = () => {
       nodeIntegration: true
     }
   });
-  mainWindow.loadURL('http://localhost:5000');
-
+  mainWindow.loadURL('http://localhost:5000/');
+ // app.set('views', __dirname + '/client/views');
+  // app.use(express.static(__dirname + '/backend/app'));
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
   // Open the DevTools.
