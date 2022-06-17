@@ -51,7 +51,7 @@
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "electron": "^9.0.2",
+    "electron": "^15.5.5",
     "electron-screenshot-app": "^4.0.3",
     "electron-squirrel-startup": "^1.0.0",
     "jimp": "^0.13.0",
@@ -67,6 +67,6 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.51",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.51",
     "@electron-forge/maker-zip": "^6.0.0-beta.51",
-    "electron": "^9.0.2"
+    "electron": "^15.5.5"
   }
 }
