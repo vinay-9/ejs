@@ -55,7 +55,7 @@
     "electron-screenshot-app": "^4.0.3",
     "electron-squirrel-startup": "^1.0.0",
     "jimp": "^0.13.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.9.18",
     "path": "^0.12.7",
     "webpack": "^4.43.0",
